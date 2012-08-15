@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title><?php echo $title_for_layout; ?> - <?php __('Croogo'); ?></title>
+	<title><?php echo $title_for_layout; ?> - <?php echo Configure::read('Site.title'); ?></title>
+	<title><?php echo $title_for_layout; ?> - safd<?php echo Configure::read('Site.title'); ?><?php __('Admond Administratie'); ?></title>
 	<?php
 		echo $this->Html->css(array(
 			'reset',
@@ -24,7 +25,7 @@
 			'jquery/jquery.tipsy',
 			'jquery/jquery.elastic-1.6.1.js',
 			'jquery/thickbox-compressed',
-			'admin',
+			'admin',	
 		));
 		echo $scripts_for_layout;
 	?>
@@ -32,7 +33,7 @@
 
 <body>
 
-	<div id="wrapper">
+	<div id="wrapper">		
 		<?php echo $this->element('admin/header'); ?>
 
 		<div id="nav-container">
@@ -45,7 +46,8 @@
 			<div class="grid_16">
 				<div id="content">
 					<?php
-						echo $this->Layout->sessionFlash();
+						echo $this->Layout->sessionFlash();?>
+						<?php
 						echo $content_for_layout;
 					?>
 				</div>

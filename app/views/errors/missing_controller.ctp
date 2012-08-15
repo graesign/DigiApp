@@ -1,7 +1,7 @@
 <?php $title_for_layout = __('Page not found', true); ?>
-<h2><?php __('Error'); ?></h2>
+<h2><?php __('Oeps, error '); ?></h2>
 <p class="error">
-	<?php __('The requested address was not found on this server.'); ?>
+	<?php __('De pagina is niet gevonden..'); ?>
 	<!-- controller -->
 </p>
-<?php Configure::write('debug', 0); ?>
+<?php Configure::write('debug', 2); ?>

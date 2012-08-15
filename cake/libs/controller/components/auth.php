@@ -432,7 +432,7 @@ class AuthComponent extends Object {
 						!empty($controller->uses) && isset($controller->{$controller->uses[0]}) &&
 						is_object($controller->{$controller->uses[0]})
 					);
-
+					
 					if ($hasModel) {
 						$object = $controller->modelClass;
 					} elseif ($isUses) {
@@ -474,8 +474,8 @@ class AuthComponent extends Object {
 			),
 			'sessionKey' => 'Auth.' . $model,
 			'logoutRedirect' => $this->loginAction,
-			'loginError' => __('Login failed. Invalid username or password.', true),
-			'authError' => __('You are not authorized to access that location.', true)
+			'loginError' => __('De aanmelding is mislukt. Controleer of u een correcte gebruikersnaam en wachtwoord.', true),
+			'authError' => __('U heeft geen toegang. Gelieve in te loggen.', true)
 		);
 		foreach ($defaults as $key => $value) {
 			if (empty($this->{$key})) {

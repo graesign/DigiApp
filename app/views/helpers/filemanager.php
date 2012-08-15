@@ -102,9 +102,9 @@ class FilemanagerHelper extends AppHelper {
 		}
 		foreach ($path_e AS $p) {
 			if ($p != null) {
-				$current_path .= $p.DS;
+				
 				$output[$p] = $current_path;
-			}
+			}	
 		}
 
 		return $output;

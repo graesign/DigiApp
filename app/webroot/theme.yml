@@ -2,9 +2,9 @@ name: Default
 description: Default theme for Croogo
 screenshot: screenshot.png
 
-author: Fahad Ibnay Heylaal
-authorEmail: contact@fahad19.com
-authorUrl: http://fahad19.com
+author: Graeham Blank / Fahad Ibnay Heylaal
+authorEmail: mr.graeham@gmail.com
+authorUrl: http://gravitee.nl
 
 menus:
   - main

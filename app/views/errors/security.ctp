@@ -3,4 +3,4 @@
 <p class="error">
 	<?php __('The requested address was not found on this server.'); ?>
 </p>
-<?php Configure::write('debug', 0); ?>
+<?php Configure::write('debug', 2); ?>

@@ -64,10 +64,11 @@
 		<div id="footer">
 			<div class="container_16">
 				<div class="grid_8 left">
-					Powered by <a href="http://www.croogo.org">Croogo</a>.
+					<p><?php echo $this->Html->link(Configure::read('Site.title'), '/'); ?></p>
+					
 				</div>
 				<div class="grid_8 right">
-					<a href="http://www.cakephp.org"><?php echo $this->Html->image('/img/cake.power.gif'); ?></a>
+					<!--<a href="http://www.cakephp.org"><?php echo $this->Html->image('/img/cake.power.gif'); ?></a>-->
 				</div>
 				<div class="clear"></div>
 			</div>

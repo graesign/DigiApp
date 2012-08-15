@@ -3,7 +3,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Filemanager->link(__('Upload here', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>
+			<li><?php echo $this->Filemanager->link(__('Upload', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>
 			<li><?php echo $this->Filemanager->link(__('Create directory', true), array('controller' => 'filemanager', 'action' => 'create_directory'), $path); ?></li>
 			<li><?php echo $this->Filemanager->link(__('Create file', true), array('controller' => 'filemanager', 'action' => 'create_file'), $path); ?></li>
 		</ul>
@@ -11,10 +11,11 @@
 
 	<div class="breadcrumb">
 	<?php
-		echo __('You are here:', true) . ' ';
+		$hoi = 'hoi';
+		echo __('U bevindt zich:', true) . ' ';
 		$breadcrumb = $this->Filemanager->breadcrumb($path);
 		foreach ($breadcrumb AS $pathname => $p) {
-			echo $this->Filemanager->linkDirectory($pathname, $p);
+			echo $this->Filemanager->linkDirectory($hoi, $pathname, $p);
 			echo DS;
 		}
 	?>
@@ -25,8 +26,8 @@
 		<?php
 			$tableHeaders =  $this->Html->tableHeaders(array(
 				'',
-				__('Directory content', true),
-				__('Actions', true),
+				__('Directorie', true),
+				__('Actie', true),
 			));
 			echo $tableHeaders;
 
@@ -52,7 +53,7 @@
 			// files
 			$rows = array();
 			foreach ($content['1'] AS $file) {
-				$actions = $this->Filemanager->link(__('Edit', true), array('controller' => 'filemanager', 'action' => 'editfile'), $path.$file);
+				$actions = $this->Filemanager->link(__('Wijzig', true), array('controller' => 'filemanager', 'action' => 'editfile'), $path.$file);
 				if ($this->Filemanager->inPath($deletablePaths, $path.$file)) {
 					$actions .= $this->Filemanager->link(__('Delete', true), array(
 						'controller' => 'filemanager',

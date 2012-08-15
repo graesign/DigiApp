@@ -7,13 +7,15 @@
 		?>
 		</fieldset>
 	<?php
-		echo $this->Html->link(__('Forgot password?', true), array(
+		echo $this->Html->link(__('Wachtwoord vergeten?', true), array(
 			'admin' => false,
 			'controller' => 'users',
 			'action' => 'forgot',
 		), array(
 			'class' => 'forgot',
 		));
-		echo $this->Form->end(__('Log In', true));
+		echo $this->Form->end(__('Inloggen', true));
 	?>
+	
+	
 </div>

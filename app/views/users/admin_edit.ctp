@@ -1,9 +1,10 @@
 <div class="users form">
-	<h2><?php __('Edit User'); ?></h2>
+	<h2><?php __('Wijzig gebruiker'); ?></h2>
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Reset password', true), array('action' => 'reset_password', $this->params['pass']['0'])); ?></li>
+			<li><?php echo $this->Html->link(__('Herstel wachtwoord', true), 
+				array('action' => 'reset_password', $this->params['pass']['0'])); ?></li>
 		</ul>
 	</div>
 
@@ -11,7 +12,7 @@
 	<fieldset>
 		<div class="tabs">
 			<ul>
-				<li><a href="#user-main"><?php __('User'); ?></a></li>
+				<li><a href="#user-main"><?php __('Gebruiker'); ?></a></li>
 				<?php echo $this->Layout->adminTabs(); ?>
 			</ul>
 
@@ -32,8 +33,8 @@
 
 	<div class="buttons">
 	<?php
-		echo $this->Form->end(__('Save', true));
-		echo $this->Html->link(__('Cancel', true), array(
+		echo $this->Form->end(__('Opslaan', true));
+		echo $this->Html->link(__('Annuleren', true), array(
 			'action' => 'index',
 		), array(
 			'class' => 'cancel',

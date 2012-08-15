@@ -60,7 +60,7 @@ class FilemanagerController extends AppController {
  */
 	protected function _isEditable($path) {
 		$path = realpath($path);
-		$regex = '/^' . preg_quote(realpath(APP), '/') . '/';
+		$regex = '/^' . preg_quote(realpath('C:\DATA'), '/') . '/';
 		return preg_match($regex, $path) > 0;
 	}
 
@@ -99,13 +99,14 @@ class FilemanagerController extends AppController {
 		$this->set('title_for_layout', __('File Manager', true));
 
 		$path = realpath($path) . DS;
-		$regex = '/^' . preg_quote(realpath(APP), '/') . '/';
+		$regex = '/^' . preg_quote(realpath('C:\DATA'), '/') . '/';
 		if (preg_match($regex, $path) == false) {
 			$this->Session->setFlash(__(sprintf('Path %s is restricted', $path), true));
-			$path = APP;
+			$path = 'C:\DATA';
+			//update 14812 App -> change to AdmondDigi_DB / Super Admin
 		}
 
-		$blacklist = array('.git', '.svn', '.CVS');
+		$blacklist = array('.git', '.svn', '.CVS', );
 		$regex = '/(' . implode('|', $blacklist) . ')/';
 		if (in_array(basename($path), $blacklist) || preg_match($regex, $path)
 			) {
@@ -165,7 +166,7 @@ class FilemanagerController extends AppController {
 			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
 			$destination = $path.$this->data['Filemanager']['file']['name'];
 			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
-			$this->Session->setFlash(__('File uploaded successfully.', true), 'default', array('class' => 'success'));
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
 			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
 
 			$this->redirect($redirectUrl);

@@ -1,8 +1,10 @@
 <div id="nav">
 	<ul class="sf-menu">
+		<li><?php echo $this->Html->link(__('Dashboard', true), '/admin'); ?></li>
 		<li>
 			<?php echo $this->Html->link(__('Content', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?>
 			<ul>
+				<li><?php echo $this->Html->link(__('Menus', true), array('plugin' => null, 'controller' => 'menus', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('List', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?></li>
 				<li>
 					<?php echo $this->Html->link(__('Create', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'create')); ?>
@@ -29,10 +31,27 @@
 						<li><?php echo $this->Html->link(__('Published', true), array('plugin' => null, 'controller' => 'comments', 'action' => 'index', 'filter' => 'status:1;')); ?></li>
 						<li><?php echo $this->Html->link(__('Approval', true), array('plugin' => null, 'controller' => 'comments', 'action' => 'index', 'filter' => 'status:0;')); ?></li>
 					</ul>
-				</li>
+				</li>	
 			</ul>
 		</li>
 
+		<li>
+            <?php echo $this->Html->link(__('Upload', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?>
+            <ul>
+                <li><?php echo $this->Html->link(__('Bankgegevens', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('Overige', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
+            </ul>
+        </li><!-- end upload -->
+        
+        <li>
+            <?php echo $this->Html->link(__('Archief', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> 
+            <ul>
+                <li><?php echo $this->Html->link(__('Openstaande aangiftes', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('Historie', true), array('plugin' => null, 'controller' => 'nodes', 'action' => 'index')); ?> </li>
+            </ul>
+        </li><!-- end archief -->
+
+        <!--
 		<li>
 			<?php echo $this->Html->link(__('Menus', true), array('plugin' => null, 'controller' => 'menus', 'action' => 'index')); ?>
 			<ul>
@@ -42,8 +61,9 @@
 				<li><?php echo $this->Html->link($m['Menu']['title'], array('plugin' => null, 'controller' => 'links', 'action' => 'index', $m['Menu']['id'])); ?></li>
 				<?php } ?>
 			</ul>
-		</li>
+		</li>-->
 
+		<!--
 		<li>
 			<?php echo $this->Html->link(__('Blocks', true), array('plugin' => null, 'controller' => 'blocks', 'action' => 'index')); ?>
 			<ul>
@@ -51,10 +71,14 @@
 				<li><?php echo $this->Html->link(__('Regions', true), array('plugin' => null, 'controller' => 'regions', 'action' => 'index')); ?></li>
 			</ul>
 		</li>
+		-->
 
 		<li>
 			<?php echo $this->Html->link(__('Extensions', true), array('plugin' => 'extensions', 'controller' => 'extensions_plugins', 'action' => 'index')); ?>
 			<ul>
+				<li><?php echo $this->Html->link(	__('Blocks', true), array('plugin' => null, 'controller' => 'blocks', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Regions', true), array('plugin' => null, 'controller' => 'regions', 'action' => 'index')); ?></li>
+				<!-- end blocks -->
 				<li><?php echo $this->Html->link(__('Themes', true), array('plugin' => 'extensions', 'controller' => 'extensions_themes', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Locales', true), array('plugin' => 'extensions', 'controller' => 'extensions_locales', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Plugins', true), array('plugin' => 'extensions', 'controller' => 'extensions_plugins', 'action' => 'index'), array('class' => Configure::read('Admin.menus') ? 'separator' : '', 'escape' => false)); ?></li>
@@ -87,9 +111,10 @@
 		</li>
 
 		<li>
-			<?php echo $this->Html->link(__('Users', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Gebruikers', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?>
 			<ul>
-				<li><?php echo $this->Html->link(__('Users', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Admond', true), array('plugin' => null, 'controller' => 'users', 'action' => 'index')); ?></li>
+				<li><?php echo $this->Html->link(__('Klanten-CO', true), array('plugin' => null, 'controller' => 'customers', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Roles', true), array('plugin' => null, 'controller' => 'roles', 'action' => 'index')); ?></li>
 				<li><?php echo $this->Html->link(__('Permissions', true), array('plugin' => 'acl', 'controller' => 'acl_permissions', 'action' => 'index')); ?></li>
 			</ul>

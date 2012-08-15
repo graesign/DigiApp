@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title><?php echo $title_for_layout; ?> - <?php __('Croogo'); ?></title>
+	<title><?php echo $title_for_layout; ?> - <?php __('Admond Administratie'); ?></title>
 	<?php
 		echo $this->Html->css(array(
 			'reset',
@@ -18,12 +18,13 @@
 	<div id="wrapper" class="login">
 		<div id="header">
 			<p id="backtosite">
-			<?php echo $this->Html->link(__('Back to', true) . ' ' . Configure::read('Site.title'), '/'); ?>
+			<?php echo $this->Html->link(__('Terug naar', true) . ' ' . Configure::read('Site.title'), '/'); ?>
 			</p>
 		</div>
 
 		<div id="main">
 			<div id="login">
+				
 			<?php
 				echo $this->Layout->sessionFlash();
 				echo $content_for_layout;

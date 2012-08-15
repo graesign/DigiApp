@@ -5,11 +5,11 @@
  * PHP version 5
  *
  * @category Controller
- * @package  Croogo
+ * @package  Croogo~Gravitee ICT & Web solutions
  * @version  1.0
- * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
+ * @author   Graeham@gravitee.nl
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.graitee.nl
  */
 class UsersController extends AppController {
 /**
@@ -48,7 +48,7 @@ class UsersController extends AppController {
 			}
 			$cacheName = 'auth_failed_' . $this->data['User'][$field];
 			if (Cache::read($cacheName, 'users_login') >= Configure::read('User.failed_login_limit')) {
-				$this->Session->setFlash(__('You have reached maximum limit for failed login attempts. Please try again after a few minutes.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('De inloggegevens zijn niet juist. U kunt nu 15 minuten lang niet inloggen. ', true), 'default', array('class' => 'error'));
 				$this->redirect(array('action' => $this->params['action']));
 			}
 		}
@@ -79,7 +79,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			$this->data['User']['activation_key'] = md5(uniqid());
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The User has been saved', true), 'default', array('class' => 'success'));
+				$this->Session->setFlash(__('De User is opgeslagen', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
@@ -99,10 +99,10 @@ class UsersController extends AppController {
 		}
 		if (!empty($this->data)) {
 			if ($this->User->save($this->data)) {
-				$this->Session->setFlash(__('The User has been saved', true), 'default', array('class' => 'success'));
+				$this->Session->setFlash(__('De gebruikers is opgeslagen.', true), 'default', array('class' => 'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The User could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('De gebruiker kon niet worden opgeslagen, controleer de gegevens.', true), 'default', array('class' => 'error'));
 			}
 		}
 		if (empty($this->data)) {
@@ -121,13 +121,13 @@ class UsersController extends AppController {
 			$user = $this->User->findById($id);
 			if ($user['User']['password'] == Security::hash($this->data['User']['current_password'], null, true)) {
 				if ($this->User->save($this->data)) {
-					$this->Session->setFlash(__('Password has been reset.', true), 'default', array('class' => 'success'));
+					$this->Session->setFlash(__('Wachtwoord is hersteld.', true), 'default', array('class' => 'success'));
 					$this->redirect(array('action' => 'index'));
 				} else {
-					$this->Session->setFlash(__('Password could not be reset. Please, try again.', true), 'default', array('class' => 'error'));
+					$this->Session->setFlash(__('Wachtwoord kan niet worden hersteld. Probeer het nogmaals.', true), 'default', array('class' => 'error'));
 				}
 			} else {
-				$this->Session->setFlash(__('Current password did not match. Please, try again.', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Current wachtwoord komt niet overeen. Controleer uw wachtwoord en probeer het nogmaals.', true), 'default', array('class' => 'error'));
 			}
 		}
 		if (empty($this->data)) {
@@ -156,7 +156,7 @@ class UsersController extends AppController {
 	}
 
 	public function admin_logout() {
-		$this->Session->setFlash(__('Log out successful.', true), 'default', array('class' => 'success'));
+		$this->Session->setFlash(__('Succesvol afgemeld.', true), 'default', array('class' => 'success'));
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -179,7 +179,7 @@ class UsersController extends AppController {
 				$this->Email->from = Configure::read('Site.title') . ' '
 					. '<croogo@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])).'>';
 				$this->Email->to = $this->data['User']['email'];
-				$this->Email->subject = sprintf(__('[%s]  Please activate your account', true), Configure::read('Site.title'));
+				$this->Email->subject = sprintf(__('[%s]  Activeer uw account', true), Configure::read('Site.title'));
 				$this->Email->template = 'register';
 				$this->set('user', $this->data);
 				$this->Email->send();
@@ -206,9 +206,9 @@ class UsersController extends AppController {
 			$this->User->id = $user['User']['id'];
 			$this->User->saveField('status', 1);
 			$this->User->saveField('activation_key', md5(uniqid()));
-			$this->Session->setFlash(__('Account activated successfully.', true), 'default', array('class' => 'success'));
+			$this->Session->setFlash(__('Account is succesvol geactiveerd.', true), 'default', array('class' => 'success'));
 		} else {
-			$this->Session->setFlash(__('An error occurred.', true), 'default', array('class' => 'error'));
+			$this->Session->setFlash(__('Er is een fout opgetreden.', true), 'default', array('class' => 'error'));
 		}
 
 		$this->redirect(array('action' => 'login'));
@@ -217,9 +217,9 @@ class UsersController extends AppController {
 	public function edit() {}
 
 	public function forgot() {
-		$this->set('title_for_layout', __('Forgot Password', true));
+		$this->set('title_for_layout', __('Wachtwoord vergeten', true));
 
-		if (!empty($this->data) && isset($this->data['User']['username'])) {
+		if (!empty($this->data) && isset($this->data['User']['username']	)) {
 			$user = $this->User->findByUsername($this->data['User']['username']);
 			if (!isset($user['User']['id'])) {
 				$this->Session->setFlash(__('Invalid username.', true), 'default', array('class' => 'error'));
