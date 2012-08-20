@@ -16,10 +16,11 @@
 			$paginator->sort('name'),
 			$paginator->sort('email'),
 			__('Actions', true),
+
 		));
 		echo $tableHeaders;
 
-		$rows = array();
+		//$rows = array();
 		foreach ($users AS $user) {
 			$actions  = $this->Html->link(__('Edit', true), array('controller' => 'users', 'action' => 'edit', $user['User']['id']));
 			$actions .= ' ' . $this->Layout->adminRowActions($user['User']['id']);
@@ -48,3 +49,5 @@
 
 <div class="paging"><?php echo $paginator->numbers(); ?></div>
 <div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>
+
+<?php Configure::write('debug', 2); ?>

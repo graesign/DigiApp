@@ -27,12 +27,14 @@ class CustomersController extends AppController {
 
 	public function index() {
 		$this->set('title_for_layout', __('Customers', true));
+
+		$this->set('customers', $this->Customer->find('all'));
 	}
 
 	public function admin_index() {
 		$this->set('title_for_layout', __('Customers', true));
 
-		$this->User->recursive = 0;
+		$this->Customers->recursive = 0;
 		$this->set('customers', $this->paginate());
 	}
 }

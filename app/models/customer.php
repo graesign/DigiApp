@@ -11,12 +11,10 @@ class Customer extends AppModel {
 
 	public $useDbConfig = 'mis';
 	public $useTable = 'Customers';
-	//var $useDbConfig = 'default';
+	// var $useDbConfig = 'default';
 
-	// $logs = $this->Customers->findAll();
+	// var $logs = $this->Customers->findAll();
 	// echo $logs;
-
-
 
 /*
 	// table information
@@ -30,12 +28,18 @@ class Customer extends AppModel {
 	var $cacheQueries = false; 
 
 	*/
-}
+	
 	//Check firebird-Mis connected Drivers
-	print_r (PDO :: getAvailableDrivers ());
+	
+}
 
 	function enabled() {
 		return extension_loaded('interbase');
 	}
-     
 
+
+
+// print_r (PDO :: getAvailableDrivers ());
+
+
+	

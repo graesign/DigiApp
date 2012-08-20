@@ -7,7 +7,7 @@
 		<?php
 			// echo $this->Html->link(__('Dashboard', true), '/admin');
 			// echo ' <span>|</span> '; 
-			echo $this->Html->link(__('Terug naar de website', true), '/');
+			// 	echo $this->Html->link(__('Terug naar de website', true), '/');
 			echo ' <span>|</span> ';
 			echo sprintf(__("Welkom: %s", true), $this->Session->read('Auth.User.username'));
 		?>
