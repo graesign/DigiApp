@@ -50,3 +50,6 @@
  */
 	App::import('Lib', 'Croogo');
 	require_once CONFIGS.'croogo_bootstrap.php';
+
+	//call debug
+	// CakePlugin::load('DebugKit');

@@ -4,12 +4,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Filemanager->link(__('Upload here', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>
-
-			<!--
-			<li><?php echo $this->Filemanager->link(__('Create directory', true), array('controller' => 'filemanager', 'action' => 'create_directory'), $path); ?></li>
-			<li><?php echo $this->Filemanager->link(__('Create file', true), array('controller' => 'filemanager', 'action' => 'create_file'), $path); ?></li>
-			-->
+			<li><?php echo $this->Filemanager->link(__('Upload here', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>			
 		</ul>
 	</div>
 
@@ -25,13 +20,12 @@
 			
 
 			$u = $this->Session->read('Auth.User.code');
-
 			echo 'UserCode = '. $u;
 			
 			echo "<br />";
 			echo __('U bevindt zich:', true) . '';
 			// $breadcrumb = $this->Filemanager->	breadcrumb($path);
-			// dump
+			// dump 			
 			
 			$curruser =  $this->Session->read('Auth.User.code');
 			//$curruser = $this->Session->findRecursive((test|index).*);

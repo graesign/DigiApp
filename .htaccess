@@ -1,3 +1,4 @@
+php_value memory_limit 32M
 <IfModule mod_rewrite.c>
    RewriteEngine on
    RewriteRule    ^$ app/webroot/    [L]

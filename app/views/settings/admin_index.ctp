@@ -29,7 +29,7 @@
 				'action' => 'delete',
 				$setting['Setting']['id'],
 				'token' => $this->params['_Token']['key'],
-			), null, __('Are you sure?', true));
+			), null, __('Weet u het zeker?', true));
 
 			$key = $setting['Setting']['key'];
 			$keyE = explode('.', $key);

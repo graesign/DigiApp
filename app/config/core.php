@@ -34,11 +34,11 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 1);
+	Configure::write('debug', 2);
 
 /**
  * CakePHP Log Level:
- *
+ *	
  * In case of Production Mode CakePHP gives you the possibility to continue logging errors.
  *
  * The following parameters can be used:

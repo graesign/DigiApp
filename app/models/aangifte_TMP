@@ -1,0 +1,7 @@
+<?php 
+class Aangifte extends AppModel{
+	//Model name
+	public $name = 'Aangifte';
+	public $useTable = 'users';	
+
+}

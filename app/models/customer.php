@@ -1,5 +1,16 @@
 <?php
-
+/**
+ * Customers
+ *
+ * PHP version 5
+ *
+ * @category Model
+ * @package  Admond
+ * @version  1.0
+ * @author   Graeham <mr.graeham@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @link     http://www.gravitee.nl
+ */
 class Customer extends AppModel {
 /**   
  * Model name
@@ -7,14 +18,22 @@ class Customer extends AppModel {
  * @var string
  * @access public
  */
-	public $name = 'Customer';
+	public $name = 'Customers';
 
+/**   
+ * Set DB_config
+ * Set Current_Table
+ *
+ * @var string
+ * @access public
+ */
 	public $useDbConfig = 'mis';
-	public $useTable = 'Customers';
+	public $useTable = 'CUSTOMERS';
 	// var $useDbConfig = 'default';
+	public $tablePrefix = '';
 
-	// var $logs = $this->Customers->findAll();
-	// echo $logs;
+	//public $logs = $this->CUSTOMERS->findAll();
+	 //echo $logs;
 
 /*
 	// table information
@@ -30,16 +49,23 @@ class Customer extends AppModel {
 	*/
 	
 	//Check firebird-Mis connected Drivers
-	
+
 }
 
-	function enabled() {
-		return extension_loaded('interbase');
-	}
+/**   
+ * Check firebird-MIS driver
+ *
+ * @var string
+ * @access public
+ */
 
+function enabled() {
+	return extension_loaded('interbase');
+}
 
-
+/**   
+ * Get available Drivers
+ *
+ * @access public
+ */
 // print_r (PDO :: getAvailableDrivers ());
-
-
-	

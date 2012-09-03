@@ -4,12 +4,12 @@
  *
  * PHP version 5
  *
- * @category Controller
- * @package  Croogo~Gravitee ICT & Web solutions
+ * @category Model
+ * @package  Admond
  * @version  1.0
- * @author   Graeham@gravitee.nl
+ * @author   Graeham <mr.graeham@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.graitee.nl
+ * @link     http://www.gravitee.nl
  */
 class UsersController extends AppController {
 /**
@@ -299,5 +299,7 @@ class UsersController extends AppController {
 		$this->set('title_for_layout', $user['User']['name']);
 		$this->set(compact('user'));
 	}
+	//bullshit
+	// var $components = array('DebugKit.Toolbar');
 
 }

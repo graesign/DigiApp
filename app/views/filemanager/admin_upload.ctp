@@ -3,7 +3,7 @@
 
 	<div class="breadcrumb">
 	<?php
-		__('You are here:');
+		__('U bevindt zich:');
 
 		$breadcrumb = $this->Filemanager->breadcrumb($path);
 		foreach($breadcrumb AS $pathname => $p) {

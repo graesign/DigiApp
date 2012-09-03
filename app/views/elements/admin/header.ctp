@@ -7,8 +7,8 @@
 		<?php
 			// echo $this->Html->link(__('Dashboard', true), '/admin');
 			// echo ' <span>|</span> '; 
-			// 	echo $this->Html->link(__('Terug naar de website', true), '/');
-			echo ' <span>|</span> ';
+			// echo $this->Html->link(__('Terug naar de website', true), '/');
+			// echo ' <span>|</span> ';
 			echo sprintf(__("Welkom: %s", true), $this->Session->read('Auth.User.username'));
 		?>
 		</div>
@@ -24,7 +24,7 @@
 			echo $this->Html->link(__("Afmelden", true), array('plugin' => 0, 'controller' => 'users', 'action' => 'logout'));
 		?>
 		</div>
-
+		
 		<div class="clear">&nbsp;</div>
 	</div>
 </div>	

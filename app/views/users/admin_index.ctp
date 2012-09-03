@@ -22,7 +22,9 @@
 
 		//$rows = array();
 		foreach ($users AS $user) {
+			//begin
 			$actions  = $this->Html->link(__('Edit', true), array('controller' => 'users', 'action' => 'edit', $user['User']['id']));
+			//mid
 			$actions .= ' ' . $this->Layout->adminRowActions($user['User']['id']);
 			$actions .= ' ' . $this->Html->link(__('Delete', true), array(
 				'controller' => 'users',
@@ -47,7 +49,7 @@
 	</table>
 </div>
 
+
 <div class="paging"><?php echo $paginator->numbers(); ?></div>
 <div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>
 
-<?php Configure::write('debug', 2); ?>

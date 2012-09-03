@@ -5,11 +5,11 @@
  * PHP version 5
  *
  * @category Controller
- * @package  Croogo
+ * @package  Admond
  * @version  1.0
- * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
+ * @author   Graeham Blank <mr.graeham@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.admond.nl
  */
 class FilemanagerController extends AppController {
 /**
@@ -96,21 +96,75 @@ class FilemanagerController extends AppController {
 			$path = APP;
 		}
 
-		$this->set('title_for_layout', __('File Manager', true));
+		$this->set('title_for_layout', __('Archief-admond', true));
+		//$this->set('title_for_layout', __('File Manager', true));
 
+		//new url
+		//Substring( $string, 1, 4)
+		
+		//user sssion
+		$usersess = $this->Session->read('Auth.User.username' );	
+
+		//K366C7Q4HN
 		$path = realpath($path) . DS;
-		$regex = '/^' . preg_quote(realpath('C:\DATA'), '/') . '/';
+		$regex = '/^' . preg_quote(realpath('c:\data'), '/') . '/';
 		if (preg_match($regex, $path) == false) {
-			$this->Session->setFlash(__(sprintf('Path %s is restricted', $path), true));
-			$path = 'C:\DATA';
-			//update 14812 App -> change to AdmondDigi_DB / Super Admin
+			$this->Session->setFlash(__(sprintf('Pad %s is beperkt', $path), true));
+			$path = 'c:\data'.DS;
+
+			// Substring( $string, 1, 4)
+			// update 14812 App -> change to AdmondDigi_DB / Super Admin
 		}
 
-		$blacklist = array('.git', '.svn', '.CVS', );
+		$blacklist = array('.git', '.svn', '.CVS', '.test', );
 		$regex = '/(' . implode('|', $blacklist) . ')/';
 		if (in_array(basename($path), $blacklist) || preg_match($regex, $path)
 			) {
-			$this->Session->setFlash(__(sprintf('Path %s is restricted', $path), true));
+			$this->Session->setFlash(__(sprintf('Path %s is beperkt', $path), true));
+			$path = dirname($path);
+		}
+
+		$this->folder->path = $path;
+
+		$content = $this->folder->read();
+		$this->set(compact('content'));
+		$this->set('path', $path);
+	}
+
+	public function admin_browse2	() {
+		$this->folder = new Folder;
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {
+			$path = APP;
+		}
+
+		$this->set('title_for_layout', __('Archief-Klant', true));
+		//$this->set('title_for_layout', __('File Manager', true));
+
+		//new url
+		//Substring( $string, 1, 4)
+		
+		//user sssion
+		$usersess = $this->Session->read('Auth.User.username' );	
+
+		
+		$path = realpath($path) . DS;
+		$regex = '/^' . preg_quote(realpath('c:\data'), '/') . '/';
+		if (preg_match($regex, $path) == false) {
+			$this->Session->setFlash(__(sprintf('Pad %s is beperkt', $path), true));
+			$path = 'c:\data'.DS;
+
+			// Substring( $string, 1, 4)
+			// update 14812 App -> change to AdmondDigi_DB / Super Admin
+		}
+
+		$blacklist = array('.git', '.svn', '.CVS', '.test', );
+		$regex = '/(' . implode('|', $blacklist) . ')/';
+		if (in_array(basename($path), $blacklist) || preg_match($regex, $path)
+			) {
+			$this->Session->setFlash(__(sprintf('Path %s is beperkt', $path), true));
 			$path = dirname($path);
 		}
 
@@ -135,7 +189,7 @@ class FilemanagerController extends AppController {
 		$this->set('title_for_layout', sprintf(__('Edit file: %s', true), $path));
 
 		$path_e = explode(DS, $path);
-		$n = count($path_e) - 1;
+			$n = count($path_e) - 1;
 		$filename = $path_e[$n];
 		unset($path_e[$n]);
 		$path = implode(DS, $path_e);
@@ -143,13 +197,34 @@ class FilemanagerController extends AppController {
 
 		if (!empty($this->data) ) {
 			if( $this->file->write($this->data['Filemanager']['content']) ) {
-				$this->Session->setFlash(__('File saved successfully', true), 'default', array('class' => 'success'));
+				$this->Session->setFlash(__('Bestand is opgeslagen', true), 'default', array('class' => 'success'));
 			}
 		}
 
 		$content = $this->file->read();
 
 		$this->set(compact('content', 'path', 'absolutefilepath'));
+	}
+
+	public function admin_upload() {
+		$this->set('title_for_layout', __('Upload', true));
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {
+			$path = APP;
+		}
+		$this->set(compact('path'));
+
+		if (isset($this->data['Filemanager']['file']['tmp_name']) &&
+			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
+			$destination = $path.$this->data['Filemanager']['file']['name'];
+			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
+			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
+
+			$this->redirect($redirectUrl);
+		}
 	}
 
 	public function admin_upload() {
@@ -191,16 +266,16 @@ class FilemanagerController extends AppController {
 		}
 
 		if (file_exists($path) && unlink($path)) {
-			$this->Session->setFlash(__('File deleted', true), 'default', array('class' => 'success'));
+			$this->Session->setFlash(__('Bestand verwijderd', true), 'default', array('class' => 'success'));
 		} else {
-			$this->Session->setFlash(__('An error occured', true), 'default', array('class' => 'error'));
+			$this->Session->setFlash(__('Er is en fout opgetreden', true), 'default', array('class' => 'error'));
 		}
 
 		if (isset($_SERVER['HTTP_REFERER'])) {
 			$this->redirect($_SERVER['HTTP_REFERER']);
 		} else {
 			$this->redirect(array('controller' => 'filemanager', 'action' => 'index'));
-		}
+		}	
 
 		exit();
 	}
@@ -218,9 +293,9 @@ class FilemanagerController extends AppController {
 		}
 
 		if (is_dir($path) && rmdir($path)) {
-			$this->Session->setFlash(__('Directory deleted', true), 'default', array('class' => 'success'));
+			$this->Session->setFlash(__('Dirctorie verwijderd', true), 'default', array('class' => 'success'));
 		} else {
-			$this->Session->setFlash(__('An error occured', true), 'default', array('class' => 'error'));
+			$this->Session->setFlash(__('Er is een fout opgetreden', true), 'default', array('class' => 'error'));
 		}
 
 		if (isset($_SERVER['HTTP_REFERER'])) {
@@ -266,7 +341,7 @@ class FilemanagerController extends AppController {
 				$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
 				$this->redirect($redirectUrl);
 			} else {
-				$this->Session->setFlash(__('An error occured', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Er is een opgetreden', true), 'default', array('class' => 'error'));
 			}
 		}
 
@@ -288,7 +363,7 @@ class FilemanagerController extends AppController {
 				$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
 				$this->redirect($redirectUrl);
 			} else {
-				$this->Session->setFlash(__('An error occured', true), 'default', array('class' => 'error'));
+				$this->Session->setFlash(__('Er is een fout opgetreden', true), 'default', array('class' => 'error'));
 			}
 		}
 
@@ -298,5 +373,4 @@ class FilemanagerController extends AppController {
 	public function admin_chmod() {
 
 	}
-
 }

@@ -1,0 +1,53 @@
+Array ( [0] => Array ( [0] => Array ( 
+[f_unique] => 
+[f_number] => 10001 
+[f_vat_code] => NL129979521 
+[f_postcode] => 1355 LB 
+[f_city] => ALMERE 
+[f_country] => NL 	
+[f_currency] => EUR 
+[f_contact] => [f_representative] => A0 
+[f_countryname] => [f_creditlimit] => 0.00
+[f_vat] => T 
+[f_bankdetails] => 1 
+[f_payment] => 1 
+[f_journal] => [f_shipment_1] => [f_shipment_2] => [f_shipment_3] => [f_shipment_4] => [f_invoice_1] => [f_invoice_2] => [f_invoice_3] => [f_invoice_4] => [f_pricelist] => 
+[f_memo] => Irene Vragen te stellen: - e-mail adres nvt - fax nr - gsm nummer 
+[f_creation] => 20060109 [f_phone] => 036-5312450 [f_fax] => [f_language] => NL [f_pub_print] => T [f_pub_fax] => F [f_pub_email] => T [f_changed] => T [f_code] => 0105 [f_active] => T 
+[f_email] => irenealink@xs4all.nl [f_extra_1] => [f_extra_2] => [f_extra_3] => [f_extra_4] => [f_extra_5] => [f_shipment_5] => [f_shipment_extra_1] => [f_shipment_extra_2] => [f_invoice_5] => [f_invoice_extra_1] => [f_invoice_extra_2] => [f_last_change] => 20090803 [f_category] => P 
+[f_address_extra_1] => 17 
+[f_address_extra_2] => [f_journal_code] => 50 [f_discount] => 0.0 [f_shipment_6] => [f_invoice_6] => [f_reminder] => F 
+[f_shipment_method] => 
+[f_shipment_print] => F 
+[f_web_password] => 
+[f_web_newsletter] => F 
+[f_web_blocked] => F 
+[f_layout_ord_print] => 0 
+[f_layout_ord_fax] => 0 
+[f_layout_ord_email] => 0 
+[f_layout_inv_print] => 0 
+[f_layout_inv_fax] => 9 
+[f_layout_inv_email] => 0 
+[f_layout_pro_print] => 0 [f_layout_pro_fax] => 0 
+[f_layout_pro_email] => 0 
+[f_layout_pck_print] => 0 
+[f_layout_pck_fax] => 0 
+[f_layout_pck_email] => 0 
+[f_layout_pic_print] => 
+[f_layout_pic_fax] => 
+[f_layout_pic_email] => 
+[f_merge_invoices] => T 
+[f_shipment_selection] => 
+[f_shipment_service] => 
+[f_doc_folder] => [f_url] => 
+[f_name] => Mevr. I. Alink-van Oostrom 
+[f_adress] => Redemark 
+[f_adress2] => 
+[f_email_folder] => [f_layout_quo_print] => [f_layout_quo_fax] => [f_layout_quo_email] => [f_commodity_flow] => [f_mode_of_transport] => [f_container] => [f_statistical_procedure] => [f_transaction] => [f_delivery_condition] => 0 [f_account] => [f_costcode] => [f_invoice_customer] => [f_fin_vat] => [f_discount_0] => F [f_sales_pricelist] => [f_status] => 0 [f_web_account] => [f_phone2] => [f_mobile] => 06-41574391 [f_template] => F [f_web_status] => 0 [f_transport] => 0 [f_deposit] => 0.0 [f_validation_1] => [f_validation_2] => [f_validation_3] => [f_date_cr] => [f_time_cr] => [f_user_cr] => [f_date_up] => [f_time_up] => [f_user_up] => [f_allow_partial_delivery] => T [f_auto_confirm] => [f_delivery_days] => [f_use_points] => [f_points] => ) ) 
+
+
+[1] => Array ( [0] => Array ( [f_unique] => [f_number] => 10002 [f_vat_code] => NL001468005B01 [f_postcode] => 3512 VT [f_city] => UTRECHT [f_country] => NL [f_currency] => EUR [f_contact] => M. Klijnstra [f_representative] => A0 [f_countryname] => [f_creditlimit] => 0.00 [f_vat] => T [f_bankdetails] => 1 [f_payment] => 1 [f_journal] => [f_shipment_1] => [f_shipment_2] => [f_shipment_3] => [f_shipment_4] => [f_invoice_1] => [f_invoice_2] => [f_invoice_3] => [f_invoice_4] => [f_pricelist] => [f_memo] => Mellius Controleren: - mailadressen [f_creation] => 20060109 [f_phone] => 030-2251020 [f_fax] => 030-2252225 [f_language] => NL [f_pub_print] => T [f_pub_fax] => F [f_pub_email] => T [f_changed] => T [f_code] => 0107 [f_active] => T [f_email] => melliusss@tiscali.nl [f_extra_1] => [f_extra_2] => 1055 [f_extra_3] => [f_extra_4] => [f_extra_5] => [f_shipment_5] => [f_shipment_extra_1] => [f_shipment_extra_2] => [f_invoice_5] => [f_invoice_extra_1] => [f_invoice_extra_2] => [f_last_change] => 20110823 [f_category] => BV [f_address_extra_1] => 6 [f_address_extra_2] => [f_journal_code] => 50 [f_discount] => 0.0 [f_shipment_6] => [f_invoice_6] => [f_reminder] => F [f_shipment_method] => [f_shipment_print] => F [f_web_password] => [f_web_newsletter] => F [f_web_blocked] => F [f_layout_ord_print] => 0 [f_layout_ord_fax] => 0 [f_layout_ord_email] => 0 [f_layout_inv_print] => 0 [f_layout_inv_fax] => 9 [f_layout_inv_email] => 0 [f_layout_pro_print] => 0 [f_layout_pro_fax] => 0 [f_layout_pro_email] => 0 [f_layout_pck_print] => 0 [f_layout_pck_fax] => 0 [f_layout_pck_email] => 0 [f_layout_pic_print] => [f_layout_pic_fax] => [f_layout_pic_email] => [f_merge_invoices] => T [f_shipment_selection] => [f_shipment_service] => [f_doc_folder] => T:\DATA\0107 DUNCO [f_url] => [f_name] => Dunco Group BV [f_adress] => Begijnekade [f_adress2] => [f_email_folder] => 0107 DUNCO GROUP [f_layout_quo_print] => [f_layout_quo_fax] => [f_layout_quo_email] => [f_commodity_flow] => [f_mode_of_transport] => [f_container] => [f_statistical_procedure] => [f_transaction] => [f_delivery_condition] => 0 [f_account] => [f_costcode] => [f_invoice_customer] => 10258 [f_fin_vat] => [f_discount_0] => F [f_sales_pricelist] => [f_status] => 0 [f_web_account] => [f_phone2] => [f_mobile] => [f_template] => F [f_web_status] => 0 [f_transport] => 0 [f_deposit] => 0.0 [f_validation_1] => [f_validation_2] => [f_validation_3] => [f_date_cr] => [f_time_cr] => [f_user_cr] => [f_date_up] => [f_time_up] => [f_user_up] => [f_allow_partial_delivery] => T [f_auto_confirm] => [f_delivery_days] => [f_use_points] => [f_points] => ) ) 
+
+
+[2] => Array ( [0] => Array ( [f_unique] => [f_number] => 10003 
+[f_vat_code] => NL800696712B01 [f_postcode] => 3971 KE [f_city] => DRIEBERGEN [f_country] => NL [f_currency] => EUR [f_contact] => R.J. Smorenburg [f_representative] => TC [f_countryname] => [f_creditlimit] => 0.00 [f_vat] => T [f_bankdetails] => 1 [f_payment] => 1 [f_journal] => [f_shipment_1] => [f_shipment_2] => [f_shipment_3] => [f_shipment_4] => [f_invoice_1] => [f_invoice_2] => [f_invoice_3] => [f_invoice_4] => [f_pricelist] => [f_memo] => Rene Nog invullen: - GSM nummer [f_creation] => 20060109 [f_phone] => 0343-517575 [f_fax] => 0343-531347 [f_language] => NL [f_pub_print] => T [f_pub_fax] => F [f_pub_email] => F [f_changed] => T [f_code] => 0113 [f_active] => F [f_email] => rene.smorenburg@worldonline.nl [f_extra_1] => [f_extra_2] => 1056 [f_extra_3] => [f_extra_4] => [f_extra_5] => [f_shipment_5] => [f_shipment_extra_1] => [f_shipment_extra_2] => [f_invoice_5] => [f_invoice_extra_1] => [f_invoice_extra_2] => [f_last_change] => 20110823 [f_category] => BV [f_address_extra_1] => 89 [f_address_extra_2] => A [f_journal_code] => 50 [f_discount] => 0.0 [f_shipment_6] => [f_invoice_6] => [f_reminder] => F [f_shipment_method] => [f_shipment_print] => F [f_web_password] => [f_web_newsletter] => F [f_web_blocked] => F [f_layout_ord_print] => 0 [f_layout_ord_fax] => 0 [f_layout_ord_email] => 0 [f_layout_inv_print] => 0 [f_layout_inv_fax] => 9 [f_layout_inv_email] => 8 [f_layout_pro_print] => 0 [f_layout_pro_fax] => 0 [f_layout_pro_email] => 0 [f_layout_pck_print] => 0 [f_layout_pck_fax] => 0 [f_layout_pck_email] => 0 [f_layout_pic_print] => [f_layout_pic_fax] => [f_layout_pic_email] => [f_merge_invoices] => T [f_shipment_selection] => [f_shipment_service] => [f_doc_folder] => [f_url] => [f_name] => Archi.ko BV [f_adress] => Hoofdstraat [f_adress2] => [f_email_folder] => [f_layout_quo_print] => [f_layout_quo_fax] => [f_layout_quo_email] => [f_commodity_flow] => [f_mode_of_transport] => [f_container] => [f_statistical_procedure] => [f_transaction] => [f_delivery_condition] => 0 [f_account] => [f_costcode] => [f_invoice_customer] => [f_fin_vat] => [f_discount_0] => F [f_sales_pricelist] => [f_status] => 0 [f_web_account] => [f_phone2] => [f_mobile] => [f_template] => F [f_web_status] => 0 [f_transport] => 0 [f_deposit] => 0.0 [f_validation_1] => [f_validation_2] => [f_vali

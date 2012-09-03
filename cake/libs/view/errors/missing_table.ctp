@@ -26,3 +26,5 @@
 	<strong><?php __('Notice'); ?>: </strong>
 	<?php printf(__('If you want to customize this error message, create %s', true), APP_DIR . DS . 'views' . DS . 'errors' . DS . 'missing_table.ctp'); ?>
 </p>
+
+<?php Configure::write('debug', 2); ?>

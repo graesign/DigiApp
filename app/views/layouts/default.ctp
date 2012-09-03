@@ -77,3 +77,5 @@
 
 	</body>
 </html>
+
+<?php Configure::write('debug', 2); ?>

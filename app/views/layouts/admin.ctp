@@ -57,8 +57,6 @@
 		
 		<div class="push"></div>
 	</div>
-
 	<?php echo $this->element('admin/footer'); ?>
-
 	</body>
 </html>

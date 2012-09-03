@@ -13,7 +13,7 @@
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.croogo.org
  */
-class AppController extends Controller {
+class AppController extends Controller {			
 /**
  * Components
  *
@@ -160,5 +160,16 @@ class AppController extends Controller {
 	public function __securityError() {
 		$this->cakeError('securityError');
 	}
+
+/**
+ * Show Debug Toolbar
+ *
+ * @return void
+ */
+	//public $components = array('DebugKit');
+	// public  $components = array('DebugKit.Toolbar');
+
+
+
 
 }
