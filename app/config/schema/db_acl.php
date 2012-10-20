@@ -69,5 +69,4 @@ class DbAclSchema extends CakeSchema {
 			'_delete' => array('type'=>'string', 'null' => false, 'default' => '0', 'length' => 2),
 			'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'ARO_ACO_KEY' => array('column' => array('aro_id', 'aco_id'), 'unique' => 1))
 		);
-
 }

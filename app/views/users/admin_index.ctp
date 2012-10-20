@@ -1,9 +1,9 @@
 <div class="users index">
-	<h2><?php __('Users');?></h2>
+	<h2><?php __('Admond-Gebruikers');?></h2>
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New User', true), array('action'=>'add')); ?></li>
+			<li><?php echo $this->Html->link(__('Nieuwe gebruiker', true), array('action'=>'add')); ?></li>
 		</ul>
 	</div>
 
@@ -11,27 +11,26 @@
 	<?php
 		$tableHeaders =  $this->Html->tableHeaders(array(
 			$paginator->sort('id'),
-			__('Role', true),
-			$paginator->sort('username'),
-			$paginator->sort('name'),
+			__('Rol', true),
+			$paginator->sort('gebruikersnaam'),
+			$paginator->sort('naam'),
 			$paginator->sort('email'),
-			__('Actions', true),
-
+			__('Actie', true),
 		));
-		echo $tableHeaders;
+ 		echo $tableHeaders;
 
 		//$rows = array();
 		foreach ($users AS $user) {
 			//begin
-			$actions  = $this->Html->link(__('Edit', true), array('controller' => 'users', 'action' => 'edit', $user['User']['id']));
+			$actions  = $this->Html->link(__('Wijzig', true), array('controller' => 'users', 'action' => 'edit', $user['User']['id']));
 			//mid
 			$actions .= ' ' . $this->Layout->adminRowActions($user['User']['id']);
-			$actions .= ' ' . $this->Html->link(__('Delete', true), array(
+			$actions .= ' ' . $this->Html->link(__('Verwijder', true), array(
 				'controller' => 'users',
 				'action' => 'delete',
 				$user['User']['id'],
 				'token' => $this->params['_Token']['key'],
-			), null, __('Are you sure?', true));
+			), null, __('Weet u zeker dat u deze gebruiker wilt verwijderen?', true));
 
 			$rows[] = array(
 				$user['User']['id'],
@@ -49,7 +48,11 @@
 	</table>
 </div>
 
-
 <div class="paging"><?php echo $paginator->numbers(); ?></div>
-<div class="counter"><?php echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?></div>
+<div class="counter">
+	<?php 
+	echo $paginator->counter(array('format' => __('Pagina %page% of %pages%', true)));
 
+	//echo $paginator->counter(array('format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true))); ?>
+
+</div>

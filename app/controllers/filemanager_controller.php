@@ -89,13 +89,13 @@ class FilemanagerController extends AppController {
 
 	public function admin_browse() {
 		$this->folder = new Folder;
-
+		
 		if (isset($this->params['url']['path'])) {
 			$path = $this->params['url']['path'];
 		} else {
 			$path = APP;
 		}
-
+		
 		$this->set('title_for_layout', __('Archief-admond', true));
 		//$this->set('title_for_layout', __('File Manager', true));
 
@@ -105,7 +105,6 @@ class FilemanagerController extends AppController {
 		//user sssion
 		$usersess = $this->Session->read('Auth.User.username' );	
 
-		//K366C7Q4HN
 		$path = realpath($path) . DS;
 		$regex = '/^' . preg_quote(realpath('c:\data'), '/') . '/';
 		if (preg_match($regex, $path) == false) {
@@ -207,11 +206,11 @@ class FilemanagerController extends AppController {
 	}
 
 	public function admin_upload() {
-		$this->set('title_for_layout', __('Upload', true));
+		$this->set('title_for_layout', __('Upload Bankbestanden', true));
 
 		if (isset($this->params['url']['path'])) {
 			$path = $this->params['url']['path'];
-		} else {
+		} else {		
 			$path = APP;
 		}
 		$this->set(compact('path'));
@@ -227,12 +226,13 @@ class FilemanagerController extends AppController {
 		}
 	}
 
-	public function admin_upload() {
-		$this->set('title_for_layout', __('Upload', true));
+	
+	public function admin_upload2() {
+		$this->set('title_for_layout', __('Upload Belastingdienst', true));
 
 		if (isset($this->params['url']['path'])) {
 			$path = $this->params['url']['path'];
-		} else {
+		} else {		
 			$path = APP;
 		}
 		$this->set(compact('path'));
@@ -247,6 +247,90 @@ class FilemanagerController extends AppController {
 			$this->redirect($redirectUrl);
 		}
 	}
+
+	public function admin_upload3() {
+		$this->set('title_for_layout', __('Upload Inkoopbestanden', true));
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {		
+			$path = APP;
+		}
+		$this->set(compact('path'));
+
+		if (isset($this->data['Filemanager']['file']['tmp_name']) &&
+			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
+			$destination = $path.$this->data['Filemanager']['file']['name'];
+			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
+			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
+
+			$this->redirect($redirectUrl);
+		}
+	}
+
+	public function admin_upload4() {
+		$this->set('title_for_layout', __('Upload Verkoopfacturen', true));
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {		
+			$path = APP;
+		}
+		$this->set(compact('path'));
+
+		if (isset($this->data['Filemanager']['file']['tmp_name']) &&
+			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
+			$destination = $path.$this->data['Filemanager']['file']['name'];
+			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
+			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
+
+			$this->redirect($redirectUrl);
+		}
+	}
+
+	public function admin_upload5() {
+		$this->set('title_for_layout', __('Upload Kas', true));
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {		
+			$path = APP;
+		}
+		$this->set(compact('path'));
+
+		if (isset($this->data['Filemanager']['file']['tmp_name']) &&
+			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
+			$destination = $path.$this->data['Filemanager']['file']['name'];
+			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
+			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
+
+			$this->redirect($redirectUrl);
+		}
+	}
+	public function admin_upload6() {
+		$this->set('title_for_layout', __('Upload Overige gegevens', true));
+
+		if (isset($this->params['url']['path'])) {
+			$path = $this->params['url']['path'];
+		} else {		
+			$path = APP;
+		}
+		$this->set(compact('path'));
+
+		if (isset($this->data['Filemanager']['file']['tmp_name']) &&
+			is_uploaded_file($this->data['Filemanager']['file']['tmp_name'])) {
+			$destination = $path.$this->data['Filemanager']['file']['name'];
+			move_uploaded_file($this->data['Filemanager']['file']['tmp_name'], $destination);
+			$this->Session->setFlash(__('Bestand is succesvol geüpload.', true), 'default', array('class' => 'success'));
+			$redirectUrl = Router::url(array('controller' => 'filemanager', 'action' => 'browse'), true) . '?path=' . urlencode($path);
+
+			$this->redirect($redirectUrl);
+		}
+	}
+	
 
 	public function admin_delete_file() {
 		if (isset($this->params['url']['path'])) {

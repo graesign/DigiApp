@@ -71,6 +71,20 @@ img.hook-toggle:hover { cursor: pointer; }
 /**
  * Forms
  */
+.login h1{
+  color: #464646;
+  font-family: "Lucida Grande",Arial,sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0 0 3px;
+  text-align: center;
+}
+.login p{
+  margin-left:3px;
+  color: #464646;
+  font-family: "Lucida Grande",Arial,sans-serif;
+  text-align: center;
+}
 label { margin: 0px 0px 0px 3px; font-family: "Lucida Grande", Arial, sans-serif; font-size: 20px; color: #464646; }
 .text label,
 .textarea label,
@@ -86,6 +100,18 @@ form textarea { padding: 5px; font-size: 20px; margin-bottom: 10px; width: 98%; 
 form textarea { border: 1px solid #888; }
 form input[type=submit],
 form button { font-size: 13px; }
+
+button {
+
+background: url("../img/bg-button.gif") repeat-x scroll 0 0 #DDDDDD;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    height: 23px;
+    width: 67px;
+    } }
+
 form textarea { background: #fff; width: 98%; height: 60px; font-size: 13px; }
 form textarea.content { height: 350px; }
 form .wide { width: 500px; height: 150px; }

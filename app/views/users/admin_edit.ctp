@@ -20,11 +20,11 @@
 			<?php
 				echo $this->Form->input('id');
 				echo $this->Form->input('role_id');
-				echo $this->Form->input('username');
-				echo $this->Form->input('name');
+				echo $this->Form->input('username', array('label' => 'Gebruikersnaam'));
+				echo $this->Form->input('name', array('label' => 'Naam'));
 				echo $this->Form->input('email');
-				echo $this->Form->input('website');
-				echo $this->Form->input('status');
+				//echo $this->Form->input('website');
+				echo $this->Form->input('status', array('label' => 'Actief'));
 			?>
 			</div>
 			<?php echo $this->Layout->adminTabs(); ?>

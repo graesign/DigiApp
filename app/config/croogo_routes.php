@@ -35,3 +35,16 @@
 
 	// Contact
 	CroogoRouter::connect('/contact', array('controller' => 'contacts', 'action' => 'view', 'contact'));
+
+	// Accorderen
+
+
+	// Archief
+
+
+	// Facturen
+
+
+	// Orders
+	
+	

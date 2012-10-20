@@ -6,7 +6,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Create content', true), array('action'=>'create')); ?></li>
+			<li><?php echo $this->Html->link(__('Nieuwe content', true), array('action'=>'create')); ?></li>
 		</ul>
 	</div>
 
@@ -44,7 +44,7 @@
 				'action' => 'delete',
 				$node['Node']['id'],
 				'token' => $this->params['_Token']['key'],
-			), null, __('Are you sure?', true));
+			), null, __('Weet u het zeker?', true));
 
 			$rows[] = array(
 				$this->Form->checkbox('Node.'.$node['Node']['id'].'.id'),

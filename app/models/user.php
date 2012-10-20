@@ -106,7 +106,7 @@ class User extends AppModel {
 			),
 		),
 	);
-
+	
 	public function parentNode() {
 		if (!$this->id && empty($this->data)) {
 			return null;
@@ -121,7 +121,7 @@ class User extends AppModel {
 			return array('Role' => array('id' => $data['User']['role_id']));
 		}
 	}
-
+	
 	public function afterSave($created) {
 		if (!$created) {
 			$parent = $this->parentNode();
@@ -132,5 +132,4 @@ class User extends AppModel {
 			$this->Aro->save($aro);
 		}
 	}
-
 }

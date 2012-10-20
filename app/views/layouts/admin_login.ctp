@@ -12,9 +12,7 @@
 		echo $scripts_for_layout;
 	?>
 </head>
-
 <body>
-
 	<div id="wrapper" class="login">
 		<div id="header">
 			<p id="backtosite">
@@ -24,18 +22,13 @@
 
 		<div id="main">
 			<div id="login">
-				
 			<?php
 				echo $this->Layout->sessionFlash();
 				echo $content_for_layout;
 			?>
 			</div>
 		</div>
-
 		<?php echo $this->element('admin/footer'); ?>
-
 	</div>
-
-
-	</body>
+</body>
 </html>

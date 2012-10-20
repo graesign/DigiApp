@@ -54,4 +54,3 @@
 	</body>
 </html>
 
-<?php echo "hoi"; ?>
