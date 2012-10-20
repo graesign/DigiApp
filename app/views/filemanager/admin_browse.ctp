@@ -1,10 +1,10 @@
 <div class="filemanager folder">
 	<h2><?php echo $title_for_layout; ?></h2>
-	<H3>Overzicht....</H3>
+	<p>Archief Overzicht</p>
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Filemanager->link(__('Zoeken naar bestand', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>
+			<li><?php echo $this->Filemanager->link(__('Upload here', true), array('controller' => 'filemanager', 'action' => 'upload'), $path); ?></li>
 
 			<!--
 			<li><?php echo $this->Filemanager->link(__('Create directory', true), array('controller' => 'filemanager', 'action' => 'create_directory'), $path); ?></li>
@@ -18,7 +18,7 @@
 			//echo $pathname;
 			// $sql = ;
 
-			/*//specify current logged usercode
+			//specify current logged usercode
 			echo $this->Session->read('Auth.User.code');
 			echo "<br />";
 			//spcify current user like  code.
@@ -27,7 +27,7 @@
 			$u = $this->Session->read('Auth.User.code');
 
 			echo 'UserCode = '. $u;
-			*/
+			
 			echo "<br />";
 			echo __('U bevindt zich:', true) . '';
 			// $breadcrumb = $this->Filemanager->	breadcrumb($path);
@@ -37,7 +37,7 @@
 			//$curruser = $this->Session->findRecursive((test|index).*);
 			$path2 = 'c:\data';
 			$path0 = $path2 .DS. $curruser;	
-			$breadcrumb = $this->Filemanager->breadcrumb($path0);
+			$breadcrumb = $this->Filemanager->breadcrumb($path0	);
 			foreach ($breadcrumb AS $pathname => $p) {
 				echo $this->Filemanager->linkDirectory($pathname, $p);
 				echo DS;
@@ -49,9 +49,7 @@
 		<table cellpadding="0" cellspacing="0">
 		<?php
 			$tableHeaders =  $this->Html->tableHeaders(array(
-					
-				__('#', true),
-				
+				'',
 				__('Directorie', true),
 				__('Actie', true),
 			));
@@ -69,7 +67,6 @@
 					), $path.$directory);
 				}
 				$rows[] = array(
-					
 					$this->Html->image('/img/icons/folder.png'),
 					$this->Filemanager->linkDirectory($directory, $path.$directory.DS),
 					$actions,
@@ -89,8 +86,6 @@
 					), $path.$file);
 				}
 				$rows[] = array(
-					
-
 					$this->Html->image('/img/icons/'.$this->Filemanager->filename2icon($file)),
 					$this->Filemanager->linkFile($file, $path.$file),
 					$actions,

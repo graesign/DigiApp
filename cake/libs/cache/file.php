@@ -130,7 +130,7 @@ class FileEngine extends CacheEngine {
 
 		if (!empty($this->settings['serialize'])) {
 			if ($this->settings['isWindows']) {
-					$data = str_replace('\\', '\\\\\\\\', serialize($data));
+				$data = str_replace('\\', '\\\\\\\\', serialize($data));
 			} else {
 				$data = serialize($data);
 			}

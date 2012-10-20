@@ -18,32 +18,22 @@ class Customer extends AppModel {
  * @var string
  * @access public
  */
-	public $name = 'Customer';
+	public $name = 'Customers';
 
 /**   
  * Set DB_config
  * Set Current_Table
- *	
+ *
  * @var string
  * @access public
  */
 	public $useDbConfig = 'mis';
-	public $useTable = 'customers';
-	// // var $useDbConfig = 'default';
-	// public $tablePrefix = '';
+	public $useTable = 'CUSTOMERS';
+	// var $useDbConfig = 'default';
+	public $tablePrefix = '';
 
-	
-	// public $logs = $this->Customers->findAll();
-	// echo $logs;
-
-	public $actsAs = array(
-		'Ordered' => array(
-			'field' => 'f_number' ,
-			'foreign_key' => false,
-		),
-
-		
-	);
+	//public $logs = $this->CUSTOMERS->findAll();
+	 //echo $logs;
 
 /*
 	// table information
@@ -55,11 +45,12 @@ class Customer extends AppModel {
 	var $useTable = 'LoginLogs';
 	var $primaryKey = '';	
 	var $cacheQueries = false; 
-*/
+
+	*/
 	
 	//Check firebird-Mis connected Drivers
 
-}	
+}
 
 /**   
  * Check firebird-MIS driver

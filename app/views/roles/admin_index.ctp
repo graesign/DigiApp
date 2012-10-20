@@ -3,7 +3,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nieuwe rol toevoegen', true), array('action'=>'add')); ?></li>
+			<li><?php echo $this->Html->link(__('New Role', true), array('action'=>'add')); ?></li>
 		</ul>
 	</div>
 
@@ -19,9 +19,9 @@
 
 		$rows = array();
 		foreach ($roles AS $role) {
-			$actions  = $this->Html->link(__('Wijzig', true), array('controller' => 'roles', 'action' => 'edit', $role['Role']['id']));
+			$actions  = $this->Html->link(__('Edit', true), array('controller' => 'roles', 'action' => 'edit', $role['Role']['id']));
 			$actions .= ' ' . $this->Layout->adminRowActions($role['Role']['id']);
-			$actions .= ' ' . $this->Html->link(__('Verwijder', true), array(
+			$actions .= ' ' . $this->Html->link(__('Delete', true), array(
 				'controller' => 'roles',
 				'action' => 'delete',
 				$role['Role']['id'],

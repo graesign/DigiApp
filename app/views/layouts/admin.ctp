@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title><?php echo $title_for_layout; ?> - <?php echo Configure::read('Site.title'); ?></title>
-	
+	<title><?php echo $title_for_layout; ?> - safd<?php echo Configure::read('Site.title'); ?><?php __('Admond Administratie'); ?></title>
 	<?php
 		echo $this->Html->css(array(
 			'reset',

@@ -20,8 +20,8 @@
 
 	<div class="buttons">
 	<?php
-		echo $this->Form->end(__('Opslaan', true));
-		echo $this->Html->link(__('Annuleren', true), array(
+		echo $this->Form->end(__('Save', true));
+		echo $this->Html->link(__('Cancel', true), array(
 			'action' => 'index',
 		), array(
 			'class' => 'cancel',

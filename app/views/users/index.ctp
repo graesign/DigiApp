@@ -5,4 +5,3 @@
 	
 	<p><?php  echo $this->Html->link(__("Afmelden", true), array('plugin' => 0, 'controller' => 'users', 'action' => 'logout'));?></p>
 </div>
-
